@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>자바스크립트의 주요 연산자</h1>
+<hr>
+<p>실행 결과는 자바스크립트 콘솔에서 확인하세요~~</p>
+<script>
+    console.log(10+5);/* 15 */
+    console.log("10"+'5'); /* 105 */
+    console.log("자바"+"스크립트"); /* 자바스크립트 */
+    console.log("자바스크립트"+100); /* 자바스크립트100 */
+    console.log(9*10);/* 90 */
+    console.log("자바스크립트"*10); 
+    console.log(10>5?"10은 5보다 크단다!!":"뭐지?"); /* 10은 5보다 크단다!! */
+	console.log(10>5);/* true */
+	console.log("abc">"ABC"); /*  */
+	var str = "가나다";
+	console.log(str == "가나다"); // 등가 : 두 항의 타입이 다르면 변환해서 일치시켜놓고 비교/* true */
+	console.log(true == 1); /* true */
+	console.log("100" == 100); /* true */
+	console.log(true === 1);  // 동치 : 타입부터 비교 /* false  */
+	console.log("100" === 100);	/* false */
+	console.log(10/3); /* 3.333 */
+	console.log(10%3); /* 1 */
+	var num=10;
+	console.log(num++); /* 10 */   
+	console.log(++num);   /* 12 */
+	console.log(num++);    /* 12 */
+	console.log(num--);    /* 13 */
+	console.log(--num);    /* 11 */
+	var num=3.14;
+	console.log(num) /* 3.14 */
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+    h1 {
+        color : green;
+    }
+</style>
+</head>
+<body>
+<script>
+    var num=window.prompt("숫자를 한 개 입력하세요."); // string
+    console.log(num);
+    /* 덧셈은 형변환을 하지 않으면 문자열 결합이 먼저기 때문에 형변환 필요 */
+    document.write("<h1>"+(Number(num)+10)+"</h1>");
+    /* 덧셈을 제외한 다른 연산들은 형변환 안 해줘도 됨 알아서 숫자로 바꿔서 연산해줌 */
+    document.write("<h1>"+(num-10)+"</h1>");
+    document.write("<h1>"+(num*10)+"</h1>");
+    document.write("<h1>"+(num/10)+"</h1>");
+    document.write("<h1>"+(num%100)+"</h1>");
+</script>
+</body>
+</html>

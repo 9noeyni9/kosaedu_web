@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script src="util.js"></script>
+<script>
+Date.prototype.getKorDay = function() {	
+	var result=null;
+	switch(this.getDay()){
+	case 0 : result = "일요일";
+			 break;
+	case 1 : result = "월요일";
+	 		 break;
+	case 2 : result = "화요일";
+	 		break;
+	case 3 : result = "수요일";
+	 		break;
+	case 4 : result = "목요일";
+	 		break;
+	case 5 : result = "금요일";
+	 		break;
+	case 6 : result = "토요일";	 
+	}
+	return result;
+}
+let d = new Date();
+write(d.toLocaleDateString(), 'h1');
+write(d.toLocaleTimeString(), 'h2');
+write(d.getKorDay(), 'h3');
+// 본인 생일
+d = new Date(2000, 0, 1);
+write(d.toLocaleDateString(), 'h1');
+write(d.toLocaleTimeString(), 'h2');
+write(d.getKorDay(), 'h3');
+
+delete Date.prototype.getKorDay;
+document.writeln(d.getKorDay());
+</script>
+</body>
+</html>
+
+

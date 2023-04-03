@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>자바스크립트의 랜덤값 처리</h1>
+<hr>
+<p>실행 결과는 자바스크립트 콘솔에서 확인하세요~~</p>
+<script>
+for(let i=0; i <10; i++){/* var와 다른 let의 특징 : 동일한 변수 두번 선언 불가, 블럭 스코프 지원 */
+	/* 자바에는 Math라는 클래스가 있다고 표현 javascript에는 Math 객체  */
+	var rand = Math.random();// 0.0<= rand < 1.0
+	console.log(rand);
+	console.log(rand*10); /* 자바는 int형으로 소수점 자동으로 날려주지만 자바스크립트는 X */
+	console.log(Math.floor(rand*10));/* 소수점 이하 날리기 위한 것 */
+	console.log("-----------------------");
+}
+//document.write(i);//let으로 선언하면 블럭 안에서만 사용 가능하기 때문에 에러
+</script>
+</body>
+</html>

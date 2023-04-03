@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>JavaScript의 변수 선언과 활용(1)</h1>
+<script> /*  */
+	document.writeln(123); //화면 출력함
+	document.writeln(v1+"<br>");	// 오류 발생/* v1->변수로 인식, v1() -> 함수로 인식 : 정의되지 않음  */
+	document.writeln(456); //화면 출력 X 위에 에러 발생했기 때문에
+</script><!-- 스크립트 안에서 에러 발생-> 해당 스크립트는 처리X 다음 태그는 처리함  -->
+<hr>
+<script>
+    /* 변수 선언 var */
+	var v1;/* Ecma6부터는 let으로도 선언 가능 */
+	document.writeln(v1+"<br>");//초기화하지 않았으므로 undefined
+	v1 = 100;
+	document.writeln(v1+"<br>");
+	v1 = '가나다';
+	document.writeln(v1+"<br>");	
+	var v1 = true;/* var의 단점 : 변수를 다시 선언해도 에러 안 남 덮어씀(각기 다른 사람이 동일한 변수명을 사용하면 문제 발생함-->후에 let이 나온 이유) */
+	document.writeln(v1+"<br>");	
+	v1 = 123;
+	document.writeln(v1+45+"<br>");	
+	v1 = '123';
+	document.writeln(v1+45+"<br>");	
+</script>
+<hr>
+<script>
+	document.writeln(v1+"<br>");/* 위에 스크립트에서 선언된 변수 아래 스크립트에서 사용 가능 마지막 v1 */	
+</script>
+</body>
+</html>

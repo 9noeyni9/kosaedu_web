@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>자바스크립트의 변수 선언과 활용(2)</h1>
+<hr>
+<script>
+	document.write("<ul>");
+	var v1;
+	document.write("<li>"+ v1 +"</li>"); /* undefined */
+	document.write("<li>"+ typeof v1 +"</li>"); /* undefined */
+	document.write("<li>"+ (v1+10) +"</li>"); /* NaN(Not a Number) : literal  , Inf(infinite) */
+	v1 = 100;
+	document.write("<li>"+ v1 +"</li>"); /* 100 */
+	document.write("<li>"+ typeof v1 +"</li>"); /* number */
+	document.write("<li>"+ (v1+10) +"</li>"); /* 110 */
+	v1 = true;
+	document.write("<li>"+ v1 +"</li>"); /* true */
+	document.write("<li>"+ typeof v1 +"</li>"); /* boolean */
+	document.write("<li>"+ (v1+10) +"</li>"); /* 11 */
+	v1 = "가나다";
+	document.write("<li>"+ v1 +"</li>");	/* 가나다 */
+	document.write("<li>"+ typeof v1 +"</li>"); /* string */
+	document.write("<li>"+ (v1+10) +"</li>"); /* 가나다10 */
+	/* ***** */
+	v1 = new Object();/* Object객체 */
+	document.write("<li>"+ v1 +"</li>"); /* v1.toString()호출 :[object Object] */	
+	document.write("<li>"+ typeof v1 +"</li>");/* object */
+	document.write("<li>"+ (v1+10) +"</li>"); /* [object Object]10 */
+	documwnt.write("</ul>");
+</script>
+</body>
+</html>
+
+
+

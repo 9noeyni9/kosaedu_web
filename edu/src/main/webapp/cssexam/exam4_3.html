@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    	div,span {/* 그룹선택자 */
+            background-color : lime;/* 둘 다 적용 */
+            margin : 20px;/*인라인 상하는 적용 X 좌우만 적용/ 블록 스타일은 상하좌우 다 적용 */
+            width : 300px;/* 인라인 적용X */
+            height : 200px;/* 인라인 적용X */
+            font-size : 1.5em;  /* 1.5배 em : (기본 사이즈를 기준으로)배수를 의미 */
+            /* 둘 다 적용 */          
+        }    
+        hr {
+        	margin-bottom : 50px;
+        }   
+    </style>
+</head>
+<body>
+<h1>블럭 스타일 태그와 인라인 스타일 태그</h1>
+<hr>
+<div>가나다라마바사아</div>
+<div>0123456789</div>
+<div>abcdefghij</div>
+<hr>
+<span>가나다라마바사아</span>
+<span>0123456789</span>
+<span>abcdefghij</span>
+</body>
+</html>

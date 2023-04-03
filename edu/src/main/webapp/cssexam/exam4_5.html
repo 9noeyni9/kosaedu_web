@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            background-color : lime;
+            margin : 5px;/* 상하좌우적용 */
+            width : 300px;
+            height : 200px;
+            font-size : 1.5em;
+            padding : 50px;
+            text-align : center;
+            margin-left : auto;/* -위치 : 해당 위치의 margin 지정/ auto로 준 이유는? : 브라우저에게 맡기는 것-> 브라우저는 가운데로 출력(width를 지정해 주지 않으면 소용이 없음) */
+            margin-right : auto;/* margin-left, margin-right 를 둘 다 지정해주지 않으면 왼쪽으로 두는 게 default */
+            border-radius : 30px;/* 모서리 둥근 정도? */
+            /* border-radius : 10px 60px; */
+            line-height : 200px;
+            border : 1px solid red;
+        }
+        .top {
+            color : #cc0099;
+        }
+        h1 {
+            text-align : center;
+            text-shadow : 2px 2px 5px green, 4px 4px 5px red;/* 글자에 그림자 */
+            padding : 30px;
+        }
+        h1:hover {
+            transform : rotate(-10deg);/* 10도만큼 시계반대방향으로 회전해 */
+            transition : transform 4s;
+        }
+    </style>
+</head>
+<body>
+<h1><span class="top">블럭</span> 스타일 태그의 <span class="top">스타일 조정</span></h1>
+<hr>
+<div>가나다라마바사아</div>
+<div>0123456789</div>
+<div>abcdefghij</div>
+</body>
+</html>

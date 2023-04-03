@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span {/* 여기에 모든 span태그 찾아서 style지정하자 */
+             color:green;
+             font-weight:bold;
+             background-color:yellow;
+        }/* 왜 span으로 묶지?-->css시간에 */
+    </style>
+</head>
+<body>
+    <h1 style="color:red;background-color:yellow;width:400px"> &lt;br&gt; 태그와 &lt;p&gt; 태그</h1><!-- 태그에 css 정의하는 것 : inline/공간 설정 안 해주면 그 행 끝까지를 인식 -->
+    <hr>
+    동해물과 <span style="color:blue">백두산</span>이 마르고 닳도록 <!-- 인라인 방식이 우선순위가 높음 -->
+    하느님이 보우하사 우리나라 만세
+    무궁화 삼천리 화려강산
+    대한사람 대한으로 길이 보전하세
+    <hr>
+    동해물과 <span>백두산</span>이 마르고 닳도록<br>
+    하느님이 보우하사 우리나라 만세<br>
+    무궁화 삼천리 화려강산<br>
+    대한사람 대한으로 길이 보전하세<br>
+    <hr>
+    <p>동해물과 <span>백두산</span>이 마르고 닳도록</p>
+    <p>하느님이 보우하사 우리나라 만세</p>
+    <p>무궁화 삼천리 화려강산</p>
+    <p>대한사람 대한으로 길이 보전하세</p>
+    <hr>
+    <p>동해물과 <span>백두산</span>이 마르고 닳도록
+    하느님이 보우하사 우리나라 만세</p>
+    <p>무궁화 삼천리 화려강산
+    대한사람 대한으로 길이 보전하세</p>
+    <hr>
+    <p>동해물과 <span>백두산</span>이 마르고 닳도록<br>
+    하느님이 보우하사 우리나라 만세</p>
+    <p>무궁화 삼천리 화려강산<br>
+    대한사람 대한으로 길이 보전하세</p>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a {
+            text-decoration : none;
+        }
+        a:hover {
+            font-weight : bold;
+            background-color : lime;
+            color : magenta;            
+        }
+        img:hover {
+            opacity : 1.0; /* 0.0~1.0(완전불투명)     */
+            width : 40%;
+            transition : width 4s;/* 사이즈를 30 -> 40으로 키우는데 transition(전환효과 설정할 때 사용)에 의해 천천히 일어남 */
+        }
+        h1 {
+            background-color : pink;
+            width : 40%;
+        }
+        img {
+            width : 30%;
+            opacity : 0.3;/* img 태그에 아예 style 매겨놓으니까 처음부터 0.3투명도로 나옴 */
+        }
+    </style>
+</head>
+<body>
+<h1>CSS 학습(2)</h1>
+<hr>
+<a href="http://www.daum.net/">다음</a>
+<a href="http://www.naver.com/">네이버</a>
+<a href="http://www.google.com/">구글</a>
+<hr>
+<img src="../images/totoro.png"> <!--width="300"> -->
+</body>
+</html>

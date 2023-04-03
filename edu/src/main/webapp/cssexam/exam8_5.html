@@ -1,0 +1,73 @@
+<!DOCTYPE html><!-- grid 추가 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+    * {
+		margin : 0
+	}
+	
+	body {
+		display : grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+	}
+
+	header {
+		grid-column: 1 / 7;
+		grid-row: 1 / 2;		
+		background-color : yellow;
+	}
+	nav {
+		grid-column: 1 / 2;
+		grid-row: 2 / 5;
+		background-color : pink;
+	}
+	section {
+		grid-column: 2 / 7;
+		grid-row: 2 / 5;
+		background-color : skyblue;
+	}
+	article {
+		width : 80%;
+		height : 200px;
+		background-color : magenta;
+		margin : 10px auto;
+	}
+	footer {
+		grid-column: 1 / 7;
+		grid-row: 5 / 6;			
+		background-color : lightgray;
+	}
+</style>
+</head>
+<body>
+	<header>
+		<h1>레이아웃 나누기(그리드(grid))</h1>
+	</header>
+	<nav>
+		<strong>고르세용</strong><br>
+		<mark>먹고싶은거</mark>
+		<ul>
+			<li>메뉴1</li>
+			<li>메뉴2</li>
+			<li>메뉴3</li>
+			<li>메뉴4</li>
+		</ul>
+	</nav>
+	<section>
+		<article>
+			<h2>제목1</h2>
+			<p>내용1</p>
+		</article>
+		<article>
+			<h2>제목2</h2>
+			<p>내용2</p>
+		</article>
+	</section>
+	<footer>
+		<h3>홈페이지 정보(바닥 글)</h3>
+	</footer>
+</body>
+</html>
