@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>함수 정의와 활용(1)-선언적 함수 정의</h1>
+<hr>
+<script>
+function f1() {
+	document.write('f1() 호출<br>');
+}// return값이 없는 함수 
+function f2(p1, p2) {
+	document.write('f2() 호출-'+(p1+p2)+'<br>');
+}
+f1();
+f2(10,20);
+document.write('<hr>');
+var result1 = f1();/* undefined */
+var result2 = f2(100,200);
+document.write('result1 : '+result1+' result2 : '+result2);
+if(result1 == undefined) {//if(!result1) {
+	document.write('<br>리턴값이 없군요!!');
+}
+document.write('<hr>');
+f1(100);/* f1에 받는 매개변수 없기 떄문에 무시됨 */
+f2(100);/* 매개변수 하나만 대입하므로 undefined */
+/* function f1() {
+	document.write('f1() 호출<br>');
+}// return값이 없는 함수 
+function f2(p1, p2) {
+	document.write('f2() 호출-'+(p1+p2)+'<br>');
+} */ 
+//명시적함수는 함수가 밑에 내려와 있어도 가능 하지만 10_1은 함수를 변수에 담아서 사용하는 건 전역변수를 먼저 인식하기 때문에 대입연산을 해야 함수로 인식을 함 그래서 아래에 있으면 f1이 함수가 아님 
+</script>
+
+</body>
+</html>
+
+
+

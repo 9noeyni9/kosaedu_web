@@ -14,7 +14,7 @@ function sum() {
 	for(var i=0; i < arguments.length; i++) 
 		result += arguments[i];
 	return result;
-}
+}/* 전달되는 아규먼트 없으면 비어있는 배열로 생각하면 돼 */
 writeColor(sum(), 'h3', 'red');
 writeColor(sum(10), 'h3', 'green');
 writeColor(sum(10,20), 'h3', 'yellow'); 

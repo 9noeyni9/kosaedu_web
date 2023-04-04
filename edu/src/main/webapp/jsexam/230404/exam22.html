@@ -25,7 +25,7 @@ function clickProcess(p) {
 	} else if (typeof p == "function") {
 		alert("함수 전달!!");
 	} else if (typeof p == "object") {
-		if (Array.isArray(p))
+		if (Array.isArray(p))/* Array.isArray: Array객체 전달 */
 			alert("배열객체 전달!!");
 		else 
 			alert("객체 전달!!");

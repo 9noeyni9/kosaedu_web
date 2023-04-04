@@ -12,14 +12,15 @@ var ary1 = ['둘리', '또치', '도우너', '희동이', '고길동']
 document.write(ary1.length + "<br>");
 document.write(ary1 + "<br>");
 
-var ary2 = ary1.sort();
+var ary2 = ary1.sort();/* ary1가 참조하는 배열이 바뀐다는 것 */
 document.write(ary1 + "<br>");
 document.write(ary2 + "<br>");
 document.write("<hr>");
 
 var ary3 = [30, 11, 5, 27, 9]
 document.write(ary3 + "<br>");
-document.write(ary3.sort(function(a, b){ return a - b;}) + "<br>");
+document.write(ary3.sort()+"<br>"); /* sort는 문자열 기반 */
+document.write(ary3.sort(function(a, b){ return a - b;}) + "<br>");/* 숫자열 기반으로 하고 싶으면 function을 줘야 함 */
 document.write(ary3.sort(function(a, b){ return b - a;}) + "<br>");
 document.write("<hr>");
 
@@ -27,7 +28,7 @@ var ary5 = [ ];
 ary5.push(100);
 ary5.push(200);
 ary5.push(500);
-document.write(ary5 + "<br>");
+document.write(ary5 + "<br>");/* undefined 된 애들은 ...이렇게 표현됨 */
 ary5[7] = 1000;
 document.write(ary5 + "<br>");
 document.write(ary5.length + "<br>");
