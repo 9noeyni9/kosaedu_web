@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>자바스크립트의 객체 생성과 사용(객체리터럴)</h1>
+<hr>
+<script src="util.js"></script>
+<script>
+const obj = {
+				name : "듀크",
+				eat : function(food) {
+					write(this.name+"가 "+food+"를 먹어요.", "h3")
+				}/* 매개변수랑 지역변수는 그냥 사용 가능 같은 객체 안에 다른 멤버 접근시에는 꼭 this. 붙여야 함 자바스크립트는 사용되는 위치마다 다르게 봄 자기자신을 가르키므로 지금은 java와 기능 비슷 하지만 event핸들러 안에선 this는 java와 다름*/
+          }
+
+obj.eat("바나나");
+obj.eat("딸기");
+hr()
+write(typeof obj, "h2");/* object 타입으로 나옴 */ /* 자바는 객체 만들어진 후에 값 추가 가능 */
+obj.project = "자바스크립트"; //원래는 name과 eat이란 멤버만 있었는데 객체 생성 후 project,study 생성  
+obj.study = function() {
+	write(this.name+"는 "+this.project+"를 공부해요.", "h3");
+}
+obj.study();
+for(let key in obj) {/* for-in 반복문 const는 안돼 계속 값이 바뀔테니까 */
+	write(key + ":" + obj[key], "h3"); // 객체.속성명, 객체['속성명'], 객체.메서드명()
+}
+delete obj.study;/* delete : 객체 만들어진 후에 생성도 가능하지만 삭제도 가능함 */
+hr();
+for(var key in obj) {
+	write(key + ":" + obj[key], "h3");
+}
+</script>
+</body>
+</html>
+
+
+
+
+

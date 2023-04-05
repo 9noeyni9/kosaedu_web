@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script src="util.js"></script>
+<script>
+
+ function printObject(p){
+	if(typeof p !== 'object')
+		return;
+	return writeColor( p.msg,p.tag,p.color);
+} 
+  const objs =[
+  {
+		  tag :"<h1>" ,
+		  color : "#DAD9FF",  
+		  msg:"첫번째 메시지"
+		  
+  },
+  {
+	  tag :"<h2>" ,
+	  color : "#E8D9FF",
+	  msg:"두번째 메시지"
+  },
+  {
+	  tag :"<h3>" ,
+	  color : "#815B6E",
+	  msg:"세번째 메시지"
+  },
+  {
+	  tag :"<h4>" ,
+	  color : "#BDBDBD",
+	  msg:"네번째 메시지"
+  },
+  {
+	  tag :"<h5>" ,
+	  color : "#FAF4C0",
+	  msg:"다섯번째 메시지"
+  }
+	] 
+  
+  console.log(objs[i]);
+  
+  for(var i =0;i<objs.length;i++)
+	  {
+	  printObject(objs[i]);
+	  }
+</script>
+</body>
+</html>

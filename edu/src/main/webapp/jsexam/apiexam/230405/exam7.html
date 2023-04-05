@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+    #output {
+        width : 50%;
+        background-color : yellow;
+    }
+</style>
+</head>
+<body>
+<h1 id="t1">컨텐트1</h1>
+<h2 id="t2">컨텐트2</h2>
+<p id="t3">컨텐트3</p>
+<div id="t4">컨텐트4</div>
+<img id="t5" src="../../../images/totoro.png" width="100">
+<section id="t6">컨텐트5</section><!-- HTML5에 추가된 태그  -->
+<article id="t7">컨텐트5</article><!-- HTML5에 추가된 태그  -->
+<span id="t8">컨텐트6</span>
+<hr>
+<div id="output"></div>
+<script>
+    const outDom = document.getElementById("output");
+    for(let i=1; i < 9; i++)
+		outDom.innerHTML +=
+			    "<h4>"+document.getElementById("t"+i)+"</h4>";
+			    
+	/* outDom.textContent : HTML태그를 인정 안 하고 문자열로 인식 = innerText */	
+	/* outDom.innerHTML : 태그 인식 */
+</script>
+</body>
+</html>
+
+
+

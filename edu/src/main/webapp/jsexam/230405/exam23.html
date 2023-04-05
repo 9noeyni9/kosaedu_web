@@ -12,7 +12,7 @@
 	const obj = {
 		name : '듀크',
 		eat : function(food) {
-			alert(this.name + "가 " + food + "를 먹어요!!");
+			alert(this.name + "가 " + food + "를 먹어요!!");/* 인터프리터 언어들의 한계로 같은 객체 안에 다른 멤버 접근할 때 this. 꼭 붙여줘야 함 */
 		}
 	};
 	obj.eat("사과");

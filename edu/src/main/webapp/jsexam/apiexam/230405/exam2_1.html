@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+    @font-face {
+    font-family: 'RixMomsBlanketR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/RixMomsBlanketR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
+	* {
+		font-family: 'RixMomsBlanketR';
+	}
+	a {		
+		text-decoration : none;
+		font-size : 2em;
+		margin : 10px;
+	}
+</style>
+</head>
+<body>
+<h1>DOM 프로그래밍</h1>
+<hr>
+<a href="http://www.daum.net/">다음으로가자</a><!-- a태그는 기본적인 이벤트 태그를 내장하고 있는 태그(onclick이벤트로 누르면 href 주소로 이동) -->
+<a href="http://www.naver.com/">네이버로가자</a>
+<a href="http://www.google.com/">구글로가자</a>
+<hr>
+<a href="http://www.daum.net/" onclick="return go();">다음으로가자</a><!-- 원래 있는 내장되어있는 이벤트 핸들러를 바로 수행하지 않게 만든 것 -->
+<a href="http://www.naver.com/" onclick="return go();">네이버로가자</a><!-- on뒤에 주고 싶은 이미지 이름 붙이는 것 값으로 수행할 코드 작성(여기선 go()라는 함수를 가지고 return true/false) -->
+<a href="http://www.google.com/" onclick="return go();">구글로가자</a>
+
+
+<script>
+	function go() {
+    	const answer = window.confirm("정말 갈겨?");
+    	if (answer)
+        	return true;
+    	else
+    		return false;    	
+	}
+</script>
+</body>
+</html>

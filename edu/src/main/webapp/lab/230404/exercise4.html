@@ -6,17 +6,24 @@
 </head>
 <body>
 	<hr>
-	<script src="util.js"></script>
+	<script src="util.js"></script><!-- script태그는 src와 자바스크립트 코드 같이 못 씀 -->
 	<script>
 		writeColor("자바스크립트실습(4)", "h1", "yellow");
 
 		function sum() {
 			var sumNum = 0;
-			for (var i = 1; i <= num; i++) {
-				sumNum += i;
-			}
-			return sumNum;
-		}
+            if(num == undefined || num == ""){
+                return;/* 값지정 안 해주면 undefined */
+            } else {
+                    for (var i = 1; i <= num; i++) {
+                        sumNum += i;
+                    }
+                    return sumNum;
+                }
+                
+            }
+            /* console창 이용해서 값 타입 비교 등에 이용하기 */
+            /* 값이 바뀌어야하는 for문 등에는 let쓰고 그 외에는 가급적 const 많이 쓰도록 : 더 성능이 좋음 */
 		for (var j = 1; j <= 5; j++) {
 			var num = Math.floor(Math.random() * 6);
 			document.writeln(num)
@@ -28,6 +35,8 @@
 			}
 
 		}
+
+        /* 랜더링된 결과는 elements를 통해서 보여줌/서버의 오리지널 소스를 보려면 페이지소스보기 통해서 보기 */
 	</script>
 </body>
 </html>

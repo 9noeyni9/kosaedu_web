@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script src="util.js"></script>
+<script>
+ function DayInfo(name,y,m,d) {
+	this.name ="";
+	this.y ="";
+	this.m = "";
+	this.d="";
+	
+	
+	 DayInfo.prototype.getTotalDates() = function(){
+		const birth= new Date(this.y, this.m-1, this.d);
+		console.log(birth.getDate()-now.getDate());
+		
+		return this.name + "님은 태어난지 " 
+	} 
+	
+	DayInfo.Date.DayInfo.prototype.getKorDay = function() {	
+		var result=null;
+		switch(this.getDay()){
+		case 0 : result = "일요일";
+				 break;
+		case 1 : result = "월요일";
+		 		 break;
+		case 2 : result = "화요일";
+		 		break;
+		case 3 : result = "수요일";
+		 		break;
+		case 4 : result = "목요일";
+		 		break;
+		case 5 : result = "금요일";
+		 		break;
+		case 6 : result = "토요일";	 
+		}
+		return this.name +"님은 "+result+"요일에 태어났어요";
+}
+	
+
+ }
+	var str1 = new DayInfo("구인영",1994,5,23);
+	write(str1.getKorDay,"h3");
+</script>
+</body>
+</html>

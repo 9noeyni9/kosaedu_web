@@ -7,6 +7,7 @@
 <body>
 <script src="util.js"></script>
 <script>
+/* Date는 자바스크립트에 이미 내장되있음 이미 만들어진 객체에 나만의 메서드 추가 가능함() */
 Date.prototype.getKorDay = function() {	
 	var result=null;
 	switch(this.getDay()){
@@ -31,13 +32,13 @@ write(d.toLocaleDateString(), 'h1');
 write(d.toLocaleTimeString(), 'h2');
 write(d.getKorDay(), 'h3');
 // 본인 생일
-d = new Date(2000, 0, 1);
+d = new Date(1994, 5, 23);
 write(d.toLocaleDateString(), 'h1');
 write(d.toLocaleTimeString(), 'h2');
 write(d.getKorDay(), 'h3');
 
-delete Date.prototype.getKorDay;
-document.writeln(d.getKorDay());
+delete Date.prototype.getKorDay;/* delete */
+document.writeln(d.getKorDay());/* 콘솔창 확인 : 에러 */
 </script>
 </body>
 </html>

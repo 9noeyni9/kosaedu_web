@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="util.js"></script>
+</head>
+<body>
+<h1 id="test">DOM 객체를 찾자</h1>
+<h1>그래 DOM 객체를 찾자</h1>
+<hr>
+<script>
+	let dom = document.getElementsByTagName("h1");/* 두개 */
+	writeNewLine(dom);
+	writeNewLine(dom.length);
+	writeNewLine(dom[0]);
+	writeNewLine(dom[0].textContent); // innerText
+	writeNewLine(dom[0].innerHTML);
+	writeNewLine(dom[1]);
+	writeNewLine(dom[1].textContent); // innerText
+	writeNewLine(dom[1].innerHTML);
+	writeNewLine("------------------------------");
+	dom = document.getElementById("test");
+	writeNewLine(dom);
+	writeNewLine(dom.textContent);
+	window.setTimeout(function() {/* setTimeout : 단발성: 한번만 실행해줘,setInterval: 반복 실행 */
+		const kday = ['일','월', '화', '수', '목', '금', '토'][new Date().getDay()];//[배열][원하는 원소 꺼내서]kday에 대입하겠다
+		//dom.textContent =`오늘은 ${kday}요일`;/* 값 바꿔주는 것 */
+		dom.textContent +=`오늘은 ${kday}요일`;/* 기존 문구에 추가하는 것 */
+		dom.style.color ="red";
+		dom.style.backgroundColor ="lime"; // background-color, font-weight -> fontWeight :카멜케이스법
+	}, 5000);
+</script>
+</body>
+</html>

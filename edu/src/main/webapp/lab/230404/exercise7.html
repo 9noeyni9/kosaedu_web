@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		function calc() {
+			if (arguments.length == 0) {
+				return 0;
+			}
+			for (var i = 0; arguments.length; i++) {
+				if (typeof arguments[i] !== 'number') {
+					return '숫자만 전달하세요';
+				}
+				sum += arguments[i];
+			}
+			return sum;
+		}
+
+		var result1 = document.writeln(calc());
+		var result2 = document.writeln(calc(10, 20, '30'));
+		var result3 = document.writeln(calc(10, '가나다', 20));
+		var result4 = document.writeln(calc(1, 2, 3, 4, 5));
+	</script>
+</body>
+</html>

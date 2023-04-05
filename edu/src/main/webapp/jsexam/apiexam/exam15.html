@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script src="../util.js"></script>
+<script>
+// 변수를 선언합니다.
+var obj = {
+    name: '자바스크립트',
+    age: 27,
+    kind: '웹앱 개발 스크립트 언어'
+};
+
+write("[ 자바스크립트 객체를 JSON 문자열로 ]", "h1");
+var jsonStr = JSON.stringify(obj);
+writeColor(jsonStr, "h2", "red");
+
+write("[ JSON 문자열을 자바스크립트 객체로 ]", "h1");
+var copy = JSON.parse(jsonStr);
+writeColor(copy.name, "h2", "blue");
+writeColor(copy.age, "h2", "blue");
+writeColor(copy.kind, "h2", "blue");
+</script>
+</body>
+</html>

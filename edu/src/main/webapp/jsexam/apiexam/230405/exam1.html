@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form name="fm">
+	<select id="choice" onchange="go();"><!-- option 서브태그 가지고 선택 폭을 넓힘 -->
+		<option value="">---관심있는 기술을 선택해 주세요---</option><!-- 첫번째 항목이 선택되어 나옴
+		
+		
+		
+		 -->
+		<option value="https://www.w3schools.com/js/default.asp">Learn JavaScript</option>
+		<option value="https://www.w3schools.com/js/js_htmldom.asp">Learn HTML DOM</option>
+		<option value="https://www.w3schools.com/xml/ajax_intro.asp">Learn AJAX</option>
+		<option value="https://www.w3schools.com/js/js_json_intro.asp">Learn JSON</option>
+	</select>
+</form>
+<script>
+function go(){	
+	location.href = document.getElementById("choice").value;
+	//location.href = document.querySelector("#choice").value;
+}
+</script>
+</body>
+</html>

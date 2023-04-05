@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script src="../util.js"></script>
+<script>
+	const d = new Date();
+	write(d.getFullYear()+"/"+d.getMonth(), "h2");
+	write(d.toLocaleDateString(), "h2");
+	write(d.toLocaleTimeString(), "h2");
+	write(d.getTime(), "h2");
+	hr();
+	const s = new String("가나다ABC123");
+	write( s.charAt(1), "h2");
+	write( s.length, "h2");
+	write( s.substring(1, 4), "h2");
+	s.split("").forEach(function (e) {
+    	writeColor(e, "h3", "red");
+    })
+	hr();
+	const n = new Number(123.4477);
+	write( n.toFixed(2), "h2");
+	write( 999.4599.toFixed(2), "h2");
+	hr();
+    const ary = [10, 2, 4, 3, 9, 20];
+    ary.forEach(function (e) {
+    	writeColor(e, "h3", "blue");
+    })
+    write(ary.join('-'), "h2");
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

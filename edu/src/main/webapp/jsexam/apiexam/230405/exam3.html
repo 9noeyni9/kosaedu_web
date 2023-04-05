@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//변수를 선언합니다.
+	const child = window.open('../../first.html', '', 'width=300, height=200');
+	const width = screen.width;
+	const height = screen.height;
+	child.moveTo(0, 0);
+	child.resizeTo(width, height);   
+	window.setInterval(function () {/*setInterval: 주기적인 반복 효과를 줄 때 ***** */
+    	child.resizeBy(-20, -20);
+    	child.moveBy(10, 10);
+	}, 2000);  
+</script>
+</head>
+<body>
+</body>
+</html>

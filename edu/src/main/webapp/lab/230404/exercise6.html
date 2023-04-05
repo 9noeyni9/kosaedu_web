@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script src="util.js"></script>
+<script>
+  function getKorDay(y,m,d) {/* "123","abc" --> 이거 다 안되게 : typeof연산자 사용 */
+	if(typeof y !== 'number' || typeof m !== 'number' || typeof d !== 'number'){
+		return undefined
+	}
+	  const days = ['일', '월', '화', '수', '목', '금', '토'];
+	  const date = new Date(y, m-1, d);
+	  const dayNum = date.getDay();
+	  const day = days[dayNum];
+	  return day;
+	}
+
+	const year = window.prompt("년도를 입력하세요.");
+	const month = window.prompt("월을 입력하세요.");
+	const day1 = window.prompt("일을 입력하세요.");
+
+	const korDay = getKorDay(Number(year), Number(month), Number(day1));
+	
+	if(korDay === undefined){
+		writeColor("결과없음","h1","red");
+	}
+	else{
+		writeColor(year +"년"+month+ "월"+day1+"일은" + korDay+"요일 입니다.","h1","blue");
+        /* writeColor(`${year}년 ${month}월 ${day1}일은 ${korDay}요일 입니다.`,"h1","blue"); */ /* ec6부터 사용가능 */
+	} 
+  
+</script>
+</body>
+</html>

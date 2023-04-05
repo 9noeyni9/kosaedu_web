@@ -9,14 +9,15 @@
 <hr>
 <script src="util.js"></script>
 <script>
-function Student(name, korean, math, english, science) {
+// 생성자 함수 : 객체의 멤버를 초기화 하는 함수(클래스+ 생성자메서드)
+function Student(name, korean, math, english, science) {/* 생성자 함수 이름은 첫글자 대문자로 쓰는 게 관례 */
     this.이름 = name;
     this.국어 = korean;
     this.수학 = math;
     this.영어 = english;
     this.과학 = science;    
-}
-var st1 = new Student('둘리', 96, 98, 92, 98);
+}/* 코드로 구분 가능 this. 으로 대입 연산을 하고 있음 : 새로 만들어진 객체에 멤버들을 초기화하는 역할(멤버를 넣어주는 역할) */
+var st1 = new Student('둘리', 96, 98, 92, 98);/* 자바스크립트에서 new는 비어있는 객체를 만드는 것(자바와 다름) *//* 비어있는 객체에 데이터 넣어주는 것 */
 var st2 = new Student('또치', 92, 98, 96, 98);
 var st3 = new Student('도우너', 76, 96, 94, 90);
 

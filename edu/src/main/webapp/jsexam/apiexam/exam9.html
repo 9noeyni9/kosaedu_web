@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>DOM 프로그래밍</h1>
+<hr>
+<button onclick="updateTitle();">제목변경</button>
+<button onclick="updateColor();">제목칼라변경</button>
+<button onmouseover="updateImage();">이미지변경</button><br>
+<img src="../../images/1.jpg" width="200">
+
+<script>
+const dom = document.getElementsByTagName("h1")[0];
+function updateTitle() {    
+    const msg = window.prompt("제목을 입력하세요");
+    if (msg != "" && msg != null) {
+        dom.textContent = msg;
+    }
+}
+function updateColor() {    
+    const randomValue = Math.random();
+    const colorCode = '#'+Math.round(Math.random() * 0xffffff).toString(16);
+    console.log(colorCode);
+    dom.style.color = colorCode; // color
+    //dom.style.backgroundColor = colorCode; // background-color
+}
+function updateImage() {    
+	const dom = document.getElementsByTagName("img")[0];
+    const randomValue = Math.random();
+    const imageName = Math.floor(randomValue * 10) + 1;
+    console.log(imageName)
+    dom.src = "../../images/"+imageName+".jpg";
+}
+</script>
+</body>
+</html>
