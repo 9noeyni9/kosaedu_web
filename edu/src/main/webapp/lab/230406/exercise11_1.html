@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>이벤트 모델-인라인</h1>
+	<hr>
+	<button onclick="redColor()">빨강색</button>
+	<button onclick="blueColor()">파랑색</button>
+	<button onclick="yellowColor()">노랑색</button>
+	<hr>
+	<h2></h2>	
+<script>
+	var target = document.getElementsByTagName("h2")[0];
+window.onload=function(){
+	target.innerHTML="오늘은" + (new Date().getMonth()+1)+"월" +new Date().getDate()+"일 입니다."
+}
+
+
+function redColor() {
+    target.style.color = "red";
+}
+function blueColor() {
+    target.style.color = "blue";
+}
+function yellowColor() {
+    target.style.color = "yellow";
+}
+
+</script>		
+</body>
+</html>
+

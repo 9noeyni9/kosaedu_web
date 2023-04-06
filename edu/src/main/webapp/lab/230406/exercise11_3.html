@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>이벤트 모델-표준</h1>
+	<hr>
+	<button>빨강색</button>
+	<button>파랑색</button>
+	<button>노랑색</button>
+	<hr>
+	<h2></h2>	
+<script>
+	var target = document.getElementsByTagName("h2")[0];
+window.onload=function(){
+	target.innerHTML="오늘은" + (new Date().getMonth()+1)+"월" +new Date().getDate()+"일 입니다."
+}
+
+function redColor() {
+    target.style.color = "red";
+}
+function blueColor() {
+    target.style.color = "blue";
+}
+function yellowColor() {
+    target.style.color = "yellow";
+}
+var doms = document.getElementsByTagName("button");
+doms[0].addEventListener("click",redColor);
+doms[1].addEventListener("click",blueColor);
+doms[2].addEventListener("click",yellowColor);
+</script>		
+</body>
+</html>
+

@@ -5,12 +5,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+<!-- 고전이벤트모델 사용 -->
 <h1>DOM 프로그래밍</h1>
 <hr>
 <button>제목변경</button>
 <button>제목칼라변경</button>
 <button>이미지변경</button><br>
 <img src="../../images/1.jpg" width="200">
+
 <script>
 function updateTitle() {
     const dom = document.getElementsByTagName("h1")[0];
@@ -31,10 +33,11 @@ function updateImage() {
     dom.src = "../../images/"+imageName+".jpg";
 }
 
-const doms = document.getElementsByTagName("button");
-doms[0].addEventListener("click", updateTitle)
-doms[1].addEventListener("click", updateColor)
-doms[2].addEventListener("click", updateImage)
+const doms = document.getElementsByTagName("button");/* 함수이름 등록 대입 */
+doms[0].onclick = updateTitle/* 돔객체 찾아서 이벤트 먹임 */
+doms[1].onclick = updateColor
+doms[2].onclick = updateImage
+doms[2].onclick = updateColor/* 한 버튼에 함수 두개 등록 가능할까? 불가능(두개를 등록하면 마지막만 인식 이전에 함수는 사라짐:표준과의 차이(중요)) */
 </script>
 </body>
 </html>

@@ -11,7 +11,6 @@
 <button>제목칼라변경</button>
 <button>이미지변경</button><br>
 <img src="../../images/1.jpg" width="200">
-
 <script>
 function updateTitle() {
     const dom = document.getElementsByTagName("h1")[0];
@@ -31,11 +30,12 @@ function updateImage() {
     const imageName = Math.floor(randomValue * 10) + 1;
     dom.src = "../../images/"+imageName+".jpg";
 }
-
+/* 표준이벤트핸들러 */
 const doms = document.getElementsByTagName("button");
-doms[0].onclick = updateTitle
-doms[1].onclick = updateColor
-doms[2].onclick = updateImage
+doms[0].addEventListener("click", updateTitle)/*  */
+doms[1].addEventListener("click", updateColor)
+doms[2].addEventListener("click", updateImage)
+//doms[2].addEventListener("click", updateColor)/* 이렇게 주면 세번쨰 버튼 클릭시 함수 두개가 같이 호출 */
 </script>
 </body>
 </html>

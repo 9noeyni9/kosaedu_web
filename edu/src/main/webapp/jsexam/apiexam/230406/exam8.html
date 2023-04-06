@@ -9,14 +9,11 @@
 <hr>
 <h1 onclick="alert(this.textContent);">인라인 이벤트 모델</h1>
 <hr>
-<h1 id="t1">고전 이벤트 모델</h1>
+<h1 id="t1">고전 이벤트 모델</h1><!-- 아이디 속성으로 구분 --> <!-- 텍스트 외부를 눌러도 이벤트 실행되는 이유 : h1 태그의 공간은 한 줄 전체이므로 여기에 이벤트를 걸면 해당 공간 전체에 생기는 것! -->
 <hr>
 <h1 id="t2">표준 이벤트 모델</h1>
 <hr>
 <script>
-	function f1(p) {		
-		alert(p.textContent);
-	}
 	const dom2 = document.querySelector('#t1');
     const dom3 = document.querySelector('#t2');
 	function f2() {
@@ -24,7 +21,7 @@
 	}
 	function f3() {
 		alert(dom3.textContent);
-	}    
+	}    /* 같은 일을 하는 함수 f2,f3(매개변수 없음) */
     dom2.onclick = f2;
     dom3.addEventListener("click", f3);
 </script>

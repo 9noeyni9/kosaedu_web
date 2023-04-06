@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	section {
+		border : 1px solid lime;	
+		padding :10%;
+		margin : 0px auto;	
+	}
+	div {
+		border : 1px solid blue;	
+		width : 80%;
+		padding :10%;
+		margin : 0px auto;	
+	}
+	h1 {
+		border : 1px solid red;	
+		width : 80%;
+		padding :10%;
+		margin : 0px auto;		
+	}
+</style>
+
+</head>
+<body>
+  <h2>이벤트 버블링</h2>
+  <section>
+	<div>
+		<h1>&lt;h1&gt; 태그 영역</h1>
+	</div>
+  </section>
+<script>
+function clickHandler() {
+	var dom1 = document.getElementsByTagName("h1")[0];
+	var dom2 = document.getElementsByTagName("div")[0];
+	var dom3 = document.getElementsByTagName("section")[0];
+	var dom4 = document.getElementsByTagName("body")[0];
+	var dom5 = document.getElementsByTagName("h2")[0];/* h2는 h1의 조상이 아님 */
+	dom1.addEventListener("click", displayAlert);	
+	dom2.addEventListener("click", displayAlert);	
+	dom3.addEventListener("click", displayAlert);
+	dom4.addEventListener("click", displayAlert);
+	dom5.addEventListener("click", displayAlert);
+}
+function displayAlert(e) {
+	let msg = `${e.target.nodeName} 태그에서 ${e.type} 이벤트 발생함!!\n`;
+	if (e.target == e.currentTarget)/*e.target:이벤트 핸들러 수행하는 곳?? e.currentTarget:이벤트핸들러 수행을 위임받은 */
+		msg += `${e.target.nodeName} 태그의 ${e.type} 이벤트 핸들러 수행~~`;
+	else 
+		msg += `이벤트 버블링으로 ${e.currentTarget.nodeName} 태그의 ${e.type} 이벤트 핸들러 수행~~`;
+	window.alert(msg);
+}
+window.addEventListener("load", clickHandler);
+</script>
+</body>
+</html>
+
+
+
+

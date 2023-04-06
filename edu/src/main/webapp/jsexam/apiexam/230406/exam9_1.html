@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- 8과 다른점 돔객체 찾아오는 방법이 좀 다름 -->
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -19,7 +20,7 @@ function updateTitle() {
     dom.textContent = msg;
 }
 function updateColor() {
-    const dom = document.getElementById("dooly");
+    const dom = document.getElementById("dooly");/* getElementById사용 */
     //const dom = document.querySelector("#dooly");
     const randomValue = Math.random();
     const colorCode = '#'+Math.round(Math.random() * 0xffffff).toString(16);

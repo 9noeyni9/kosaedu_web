@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1  style="color:red;">세 가지 이벤트 모델</h1>
+<hr>
+<h1 onclick="f1(this);">인라인 이벤트 모델</h1><!-- 함수 호출 방법 : this는 클릭이벤트 발생한 자기 자신의 객체(target과 의미 동일)/argument로 전달 인라인에서는 전달 전에는 참조 못함 -->
+<hr>
+<h1 id="t1">고전 이벤트 모델</h1>
+<hr>
+<h1 id="t2">표준 이벤트 모델</h1>
+<hr>
+<script>    
+	function f1(t) {/* this가 호출된 함수 자리에서는 참조하지 못함(전역적은 가능하지만 인라인인 경우에는 불가능) */
+		alert(t.textContent);/* t자리에 전달 받음 */
+	}
+	const dom2 = document.querySelector('#t1');
+    const dom3 = document.querySelector('#t2');
+	function f2(e) {/* 변수 -> 이벤트 객체 전달\
+		
+		*/
+		alert(e);
+		alert(e.target.textContent);/* 이벤트객체.타겟.대상객체 */
+		alert(this.textContent);/* this를 쓰는 것과 이벤트객체.타겟.대상개체 둘이 같음 */
+	} /* 8에서 같은 일 하는 함수 합친 것(매개변수 존재) */
+    dom2.onclick = f2;
+    dom3.addEventListener("click", f2);
+</script>
+</body>
+</html>
