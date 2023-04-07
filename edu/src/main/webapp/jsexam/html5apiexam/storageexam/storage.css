@@ -1,0 +1,20 @@
+#formbox{
+  float: left;
+  padding: 20px;
+  margin-left: 20px;
+  border: 1px solid #999999;
+}
+#databox{
+  float: left;
+  width: 400px;
+  margin-left: 20px;
+  padding: 20px;
+  border: 1px solid #999999;
+}
+#keyword, #text{
+  width: 200px;
+}
+#databox > div{
+  padding: 5px;
+  border-bottom: 1px solid #999999;
+}

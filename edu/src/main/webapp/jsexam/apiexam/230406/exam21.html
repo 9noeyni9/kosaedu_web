@@ -37,16 +37,16 @@ function clickHandler() {
 	var dom2 = document.getElementsByTagName("div")[0];
 	var dom3 = document.getElementsByTagName("section")[0];
 	var dom4 = document.getElementsByTagName("body")[0];
-	dom1.addEventListener("click", displayAlert);	
+	dom1.addEventListener("click", displayAlert);/* 세번째 아규먼트 생략하면 디폴트가 false이기 때문에 캡쳐링 안 한다는 소리 */	
 	dom2.addEventListener("click", displayAlert, true);	
-	dom3.addEventListener("click", displayAlert, true);
+	dom3.addEventListener("click", displayAlert, true);/* 캡쳐링 하겠다 *//* section -> h1->div-> body ->  */
 	dom4.addEventListener("click", displayAlert);
 }
 function displayAlert(e) {
 	let msg = `${e.currentTarget.nodeName} 태그의 ${e.type} 이벤트 핸들러 수행~~`;	
 	window.alert(msg);
 	//e.stopPropagation();
-}
+}/* 이벤트 처리는 이 함수로 끝 더 반복적으로 일어나지 않음 */
 window.addEventListener("load", clickHandler);
 </script>
 </body>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+h1{
+ text-align : center;
+ color : #FAF4C0;
+ text-shadow : 2px 2px 5px #BDBDBD;
+}
+div:nth-of-type(1){
+text-align : center;
+border: solid #FAF4C0;
+height: 100px;
+width:300px;
+line-height: 100px;
+margin-right: auto;
+margin-left: auto;
+margin-bottom : 20px;
+box-shadow: 2px 2px 15px yellow;
+}
+button{
+background-color: #FAF4C0;
+border: gray;
+}
+div:nth-of-type(2){
+text-align: center;
+}
+</style>
+</head>
+<body>
+	<h1>이벤트 처리 실습</h1>
+	<hr>
+	<div>
+		<button>맑음</button>
+		<button>흐림</button>
+		<button>비</button>
+	</div>
+	<hr>
+	<div></div>
+
+	<script>
+		var imageCon = document.getElementsByTagName("div")[1];
+		var body = document.getElementsByTagName("body")[0];
+		function displayImage(e) {			
+			if (e.target.tagName == "BUTTON") {
+				if (e.target.textContent == "맑음") {
+					imageCon.innerHTML = "<img src='../../images/sun.png'>";/* dom.src */
+				} else if (e.target.textContent == "흐림") {
+					imageCon.innerHTML = "<img src='../../images/cloud.png'>";
+				} else {
+					imageCon.innerHTML = "<img src='../../images/rain.png'>";
+				}
+			}
+		}
+
+		body.addEventListener("click", displayImage);
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

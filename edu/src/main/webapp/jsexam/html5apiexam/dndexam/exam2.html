@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Drag and Drop</title>
+  <link rel="stylesheet" href="dragdrop.css">
+  <script>
+    var source, drop;
+    function initiate(){
+	  source=document.getElementById('image');
+	  source.addEventListener('dragstart', dragged, false);
+	  source.addEventListener('dragend', ending, false);
+
+	  drop=document.getElementById('dropbox');
+	  drop.addEventListener('dragenter', entering, false);
+	  drop.addEventListener('dragleave', leaving, false);
+	  drop.addEventListener('dragover', function(e){ e.preventDefault(); }, false);
+	  drop.addEventListener('drop', dropped, false);
+	}
+	function entering(e){
+	  drop.style.background='rgba(0,150,0,.2)';
+	}
+	function leaving(e){
+	  drop.style.background='#FFFFFF';
+	}
+	function ending(e){
+	  elem=e.target;  // this
+	  elem.style.visibility='hidden';
+	}
+	function dragged(e){
+	  var code='<img src="'+source.getAttribute('src')+'">';
+	  e.dataTransfer.setData('Text', code);
+	}
+	function dropped(e){
+	  e.preventDefault();
+	  drop.style.background='#FFFFFF';
+	  drop.innerHTML+=e.dataTransfer.getData('Text');
+	}
+	window.addEventListener('load', initiate, false);
+  </script>
+</head>
+<body>
+  <section id="dropbox">
+    Drag and drop the image here
+  </section>
+  <section id="picturesbox">
+    <img id="image" src="monster1.gif">
+  </section>
+</body>
+</html>

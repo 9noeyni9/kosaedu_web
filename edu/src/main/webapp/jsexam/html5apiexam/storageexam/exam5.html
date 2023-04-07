@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<fieldset>
+			<legend>로컬스토리지 및 JSON 을 이용한 객체 처리 테스트</legend>
+			<input type="button" value="저장" id="stg_save"> 
+			<input type="button" value="검색" id="stg_search"> 
+			<input type="button" value="삭제" id="stg_remove">
+			<output id="result"></output>
+	</fieldset>
+	<script>
+		window.onload = function() {			
+			document.querySelector('#stg_save').onclick = fn_stg_save;
+			document.querySelector('#stg_search').onclick = fn_stg_search;
+			document.querySelector('#stg_remove').onclick = fn_stg_remove;
+		}
+		function fn_stg_save() {
+			document.querySelector('#result').innerHTML = "";				
+			if (localStorage.getItem('info')) {
+				alert("자바스크립트 객체 정보가 JSON 형식으로 이미 정장되어 있습니다.");
+				return;
+			}
+			var obj = {
+			    name: '자바스크립트',
+			    age: 27,
+			    kind: '웹앱 개발 스크립트 언어'
+			};
+			// 출력합니다.
+			var jsonStr = JSON.stringify(obj);			
+			alert("자바스크립트 객체 정보를 JSON 형식으로 저장");
+			localStorage.setItem('info', jsonStr);
+		}
+
+		function fn_stg_search() {
+			var jsonStr = localStorage.getItem('info');
+			if (!jsonStr) {
+				alert("JSON 형식으로 저장된 자바스크립트 객체 정보가 없습니다.");
+				return;
+			}
+			var obj = JSON.parse(jsonStr);
+			var str = "";
+			for(var key in obj)
+				str +="<h2>"+ key + " - " + obj[key] + "</h2>";
+			document.querySelector('#result').innerHTML = str;
+		}
+		function fn_stg_remove() {	
+			if (!localStorage.getItem('info')) {
+				alert("JSON 형식으로 저장된 자바스크립트 객체 정보가 없습니다.");
+				return;
+			}
+			localStorage.removeItem('info');
+			document.querySelector('#result').innerHTML = "";
+			alert("스토리지 영역에 보관된 JSON 형식의 자바스크립트 객체 정보 삭제");
+		}
+	</script>
+</body>
+</html>

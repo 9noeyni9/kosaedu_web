@@ -1,0 +1,61 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title> Save Favorite Books </title>
+<link rel="stylesheet"  href="style-size.css"/>
+<link rel="stylesheet"  href="style-layout.css"/>
+<link rel="stylesheet"  href="style-presentation.css"/>
+
+<script>  
+	function save_favorite() {
+		let dom = document.getElementsByTagName("span");
+		let j = 0;
+		for (let i = 0; i < dom.length; i++) {
+			if (dom[i].firstChild.checked == true) {
+				localStorage[j] = dom[i].innerText;
+				j++;
+			}
+		}
+		localStorage.numFavorites = j;
+	}
+</script>
+
+</head>
+<body class="booklist">
+  <p class="head"> 도서 목록 </p>
+  <form>
+      <span><input type="checkbox"/>
+      멀티미디어 배움터 2.0 | 최윤철, 임순범 | 생능출판사 | 25,000원 <br/></span>
+      <span><input type="checkbox"/>
+      (알기 쉬운) 알고리즘 | 양성봉 | 생능출판사 | 24,000원 <br/></span>
+      <span><input type="checkbox"/>
+      선형대수학 Express | 김대수 | 생능출판사 | 27,000원 <br/></span>
+      <span><input type="checkbox"/>
+      루비 프로그래밍 언어 | 유하진, 김윤경, 김진석 | 생능출판사 | 29,000원 <br/></span>
+      <span><input type="checkbox"/>
+      모바일 멀티미디어 | 최윤철, 임순범 | 생능출판사 | 27,000원 <br/></span>
+      <span><input type="checkbox"/>
+      컴퓨터와 IT기술의 이해 | 최윤철, 임순범 공저 | 생능출판사 | 25,000원 <br/></span>
+      <span><input type="checkbox"/>
+      네트워크 보안 에센셜(4판) | William Stallings 지음 |
+      이재광, 전태일 공역 | 생능출판사 | 30,000원 <br/></span>
+      <span><input type="checkbox"/>
+      비즈니스 정보 시스템 | P. Baltzan &amp; A. Phillips |
+      고석하 외 공역 | 생능출판사 | 28,000원 <br/></span>
+      <span><input type="checkbox"/>
+      회로이론 | Mitchel E. Schultz |
+      김경화, 정성순외 공역 | 생능출판사 | 35,000원 <br/></span>
+      <span><input type="checkbox"/>
+      Big Java | Cay Horstmann |
+      오세만 외 공역 | 생능출판사 | 32,000원 <br/></span>
+      <span><input type="checkbox"/>
+      경영학의 이해 (9/e) | Nickels, McHugh, McHugh |
+      권구혁 외 공역 | 생능출판사 | 30,000원 <br/></span>
+      <span><input type="checkbox"/>
+      컴퓨터 배움터 | Greg Anderson 외 |
+      나연묵 외 공역 | 생능출판사 | 27,000원 <br/></span>
+  </form>
+  <button onclick="save_favorite();"> 관심도서 등록 </button>
+</body>
+</html>
