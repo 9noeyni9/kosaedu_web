@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<testxml><!-- testxml: 루트엘리먼트/ testxml의 자식 노드 : 7개 (엔터키까지) -->
+	<name>자바스크립트</name>
+	<age>27</age>
+	<kind>웹앱개발 전용 OOP 언어</kind>
+</testxml>

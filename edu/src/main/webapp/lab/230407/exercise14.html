@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Canvas API</title>
+<style>
+*{
+text-align: center;
+}
+canvas {
+	border: 1px solid black;
+}
+</style>
+</head>
+<body onload="draw_cookie()">
+	<h1>구인영의 HTML API 실습</h1>
+	<br>
+	<button onclick="save();">저장하기</button>
+	<button onclick="restore();">불러오기</button>
+	<button onclick="initialize();">삭제하기</button>
+	<hr>
+	<canvas id="canvas" width="580" height="450"></canvas>
+	<script>
+		var canvas;
+		var context;
+		function save() {
+			alert(canvas.toDataURL());
+			window.localStorage.setItem("cookiecanvas", canvas.toDataURL());
+		}
+		function restore() {
+			const img = new Image();
+			img.src = window.localStorage.cookiecanvas;
+			img.onload = function() {
+				context.drawImage(img, 0, 0);
+			}
+		}
+		function initialize() {
+
+			context.clearRect(0, 0, canvas.width, canvas.height);
+		}
+		function draw_cookie() {
+
+			canvas = document.getElementById('canvas');
+			context = canvas.getContext('2d');
+
+			// 고래 그리기
+			// 고래 몸통
+			context.beginPath();
+			context.moveTo(100, 300);
+			context.quadraticCurveTo(150, 150, 300, 300);
+			context.closePath();
+			context.fillStyle = 'gray';
+			context.fill();
+
+			// 고래 배
+			context.beginPath();
+			context.moveTo(100, 300);
+			context.quadraticCurveTo(300, 325, 300, 300);
+			context.closePath();
+			context.fillStyle = 'darkgray';
+			context.fill();
+
+			context.beginPath();
+			context.arc(90, 230, 100, 0, 1.5 * Math.PI, true);
+			context.strokeStyle = '#6799FF';
+			context.stroke();
+
+			context.beginPath();
+			context.arc(290, 230, 100, 1 * Math.PI, 1.5 * Math.PI, false);
+			context.strokeStyle = '#6799FF';
+			context.stroke();
+
+			context.beginPath();
+			context.arc(150, 265, 5, 0, 2 * Math.PI, false);
+			context.fillStyle = 'black';
+			context.fill();
+			// 고래 꼬리 
+			context.beginPath();
+			context.moveTo(250, 300);
+			context.quadraticCurveTo(275, 250, 350, 300);
+			context.quadraticCurveTo(300, 325, 250, 300);
+			context.closePath();
+			context.fillStyle = 'gray';
+			context.fill();
+
+		}
+	</script>
+</body>
+</html>
