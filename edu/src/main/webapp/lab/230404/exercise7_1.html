@@ -6,16 +6,15 @@
 </head>
 <body>
 	<script>
-		function calc() {
-			if (arguments.length == 0) {
+		function calc(...args) {
+			if (p.length == 0) {
 				return 0;
 			}
-			var sum=0;
-			for (var i = 0; arguments.length; i++) {
-				if (typeof arguments[i] !== 'number') {
+			for (let arg in args) {
+				if (typeof arg !== 'number') {
 					return '숫자만 전달하세요';
 				}
-				sum += arguments[i];
+				sum += arg;
 			}
 			return sum;
 		}
@@ -30,7 +29,6 @@
 		document.write("<h3>"+result2+"</h3>");
 		document.write("<h3>"+result3+"</h3>");
 		document.write("<h3>"+result4+"</h3>");
-		
 	</script>
 </body>
 </html>

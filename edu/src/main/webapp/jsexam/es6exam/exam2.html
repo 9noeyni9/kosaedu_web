@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <h2>ES6에서 추가된 구문&amp;API(2)</h2>
+    <hr>
+    <script src="../util.js"></script>
+    <script>
+    // 가변 아규먼트
+    function func1(...args) {
+        writeColor(`아규먼트 갯수: ${args.length}`, "h3", "lime");
+        writeColor(`아규먼트 내용: [${args}]`, "h3", "skyblue");        
+    }
+    func1(1, 2, 3, 4, 5);
+    func1(1, 2, 3, 4, 5, 6, 7, 8);
+    func1('가나다', 'ABC', 100, true);
+ 
+    hr();
+    // 기본값 매개변수
+    function func2(a = 10, b = 20, c = 30) {
+        return a + b + c;
+    }
+    writeColor(`${func2()}`, "h3", "brown");
+    writeColor(`${func2(1, 2, 3)}`, "h3", "brown");
+    writeColor(`${func2(100)}`, "h3", "brown");
+    
+    hr();
+    function func3(a, b = 20, c = 30) {
+    	console.log(`${a}:${b}:${c}`)
+        return a + b + c;
+    }
+    writeColor(`${func3()}`, "h3", "deeppink");
+    writeColor(`${func3(1, 2, 3)}`, "h3", "deeppink");
+    writeColor(`${func3(100)}`, "h3", "deeppink");
+    writeColor(`${func3(a=100)}`, "h3", "deeppink");
+    writeColor(`${func3(b=1)}`, "h3", "deeppink");
+    
+    hr();
+    // 가변 아규먼트와 배열(rest 매개변수)
+    const func4 = function (...nums) {
+        const result1 = nums.map(function (item, index) {
+          	console.log(`${item}-${index}`);
+            return item * 100;
+        });
+        const result2 = nums.reduce(function (exprvalue, item) {
+          	console.log(`${exprvalue}=${item}`);
+            return exprvalue + item;// 매번 리턴값이 새로워짐
+        });
+        const result3 = nums.forEach(function (item) {
+            item % 2 && writeColor(`${item} 은 홀수`, "h4", "red");
+            item % 2 || writeColor(`${item} 은 짝수`, "h4", "red");                
+        });
+        writeColor(`결과1: ${result1}`, "h3", "magenta");
+        writeColor(`결과2: ${result2}`, "h3", "magenta");
+        writeColor(`결과3: ${result3}`, "h3", "magenta");
+    }
+    func4(10, 20, 30, 40, 50);
+    func4(1, 2, 3, 4, 5, 6, 7, 8);
+    func4(11, 22, 33, 44, 55);
+    func4(10);
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <h2>ES6에서 추가된 구문&amp;API(3)</h2>
+    <hr>
+    <script src="../util.js"></script>
+    <script>
+    	const func1 = () => "가나다".length;/* 아규먼트 없음 */
+    	write(func1(), 'h2');
+    	
+    	const func2 = x => x*x; /* 아규먼트 하나받아서 곱하는 연산 */
+    	write(func2(10), 'h2');
+    	
+    	const func3 = (x, y) => x*y;/* 아규먼트 두개 받아서 곱하는 연산 */
+    	write(func3(10,20), 'h2');    	
+    	hr();
+        const func4 = () => writeColor("ES6", "h3", "green");
+        
+        func4();
+        func4();
+
+        const func5 = (...nums) => {
+        	hr();
+            const result1 = nums.map((item) => item * 100);
+            const result2 = nums.reduce((exprvalue, item) => exprvalue + item);
+            const result3 = nums.forEach((item) => {
+                item % 2 && writeColor(`${item} 은 홀수`, "h4", "red");
+                item % 2 || writeColor(`${item} 은 짝수`, "h4", "red");
+            });
+            hr();
+            writeColor(`결과1: ${result1}`, "h3", "magenta");
+            writeColor(`결과2: ${result2}`, "h3", "magenta");
+            writeColor(`결과3: ${result3}`, "h3", "magenta");
+        };
+
+        func5(10, 20, 30, 40, 50);
+        func5(1, 2, 3, 4, 5, 6, 7, 8);
+        func5(11, 22, 33, 44, 55);        
+        
+        const func6 = (p1, p2, p3, p4, p5) => write(`${p1},${p2},${p3},${p4},${p5}`, 'h2');           
+        /* 아규먼트 받아서 그냥 원소들 보여주는 함수 */
+        const arr = [1, 2, 3, 4, 5];
+        func6(...arr);
+        func6(...[300,400,500,600,700]);               
+    </script>
+</body>
+</html>

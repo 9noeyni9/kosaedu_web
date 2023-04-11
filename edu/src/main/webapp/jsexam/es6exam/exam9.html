@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style>
+      table {
+	     height: 100px;
+	     width: 450px;
+	     text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+    <h2>ES6에서 추가된 구문&amp;API(9)</h2>
+    <hr>
+    <h2>2초 간격으로 뉴스 요청 Ajax 통신</h2>
+	  <table border="1">
+		<tr>
+		   <th>뉴스 내용</th>
+		</tr>
+		<tr>
+		   <td id="news">잠시 기다리세요.........................</td>
+		</tr>
+	</table>
+	
+    <script>
+    window.addEventListener("load", function() {
+    	 const target = document.getElementById('news');
+	     setInterval(() => {
+	    	 fetch('/edu/jsexam/230410/ajaxexam/content/newsjson.jsp')
+	         .then(res => res.json())
+	         .then(data => target.innerHTML = data.news);		 
+	     }, 2000);
+     });	
+    </script>
+</body>
+
+</html>

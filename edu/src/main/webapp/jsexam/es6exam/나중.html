@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <h2>ES6에서 추가된 구문들(4)</h2>
+    <hr>
+    <script  type="module">
+        import { hr, writeColor } from './util2.js';
+        document.open();
+        let func1 = () => {
+            writeColor("ES6", "h3", "green");
+        }
+        func1();
+        func1();
+        hr();
+        const func2 = (...nums) => {
+            let result1 = nums.map((item) => {
+                return item * 100;
+            });
+            let result2 = nums.reduce((exprvalue, item) => {
+                return exprvalue + item;
+            });
+            let result3 = nums.forEach((item) => {
+                item % 2 && writeColor(`${item} 은 홀수`, "h4", "red");
+                item % 2 || writeColor(`${item} 은 짝수`, "h4", "red");
+            });
+            writeColor(`결과1: ${result1}`, "h3", "magenta");
+            writeColor(`결과2: ${result2}`, "h3", "magenta");
+            writeColor(`결과3: ${result3}`, "h3", "magenta");
+        }
+        let arr = [1, 2, 3, 4, 5];
+        func2(11, 22, 33, 44, 55);
+        func2(...arr);
+    </script>
+</body>
+
+</html>

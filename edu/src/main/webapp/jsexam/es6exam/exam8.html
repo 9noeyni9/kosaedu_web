@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <h2>ES6에서 추가된 구문&amp;API(8)</h2>
+    <hr>
+    <h2 onclick="getImage();">이 행을 클릭해요. Ajax로 이미지를 요청하고 출력해요....</h2>
+    <script>
+	let imgname = 1;
+    function getImage() {
+    	imgname = imgname == 10 ? 1 : imgname+1; 
+       	fetch(`/edu/images/${imgname}.jpg`)
+        .then(res => res.blob())
+        .then( data => {
+        	const img = document.createElement('img');
+    		img.width=100;
+    		img.height=100;
+    		img.src = URL.createObjectURL(data);
+    		document.body.appendChild(img);  
+        });   
+    }
+    </script>
+</body>
+
+</html>

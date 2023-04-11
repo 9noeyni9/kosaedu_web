@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <h2>ES6에서 추가된 구문&amp;API(7)</h2>
+    <hr>
+    <script>    
+    window.addEventListener("load", function() {
+       	fetch('/edu/jsexam/230410/ajaxexam/content/sample.xml')
+        .then(res => res.text())
+        .then( data => {
+        	const xmlDom = new DOMParser().parseFromString(data, 'text/xml');
+        	console.log(xmlDom);        
+        	let output = '';        	
+        	const rootE = xmlDom.getElementsByTagName('testxml');
+        	 for (let i = 1; i <rootE[0].childNodes.length; i += 2)
+		          output += `<h3>${rootE[0].childNodes[i].firstChild.nodeValue}</h3>`;
+		    document.body.innerHTML += output;
+        });   
+    });
+    </script>
+</body>
+
+</html>

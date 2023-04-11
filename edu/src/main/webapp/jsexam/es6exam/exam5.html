@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <h2>ES6에서 추가된 구문&amp;API(5)</h2>
+    <hr>
+    <script src="../util.js"></script>
+    <script>
+    	let a = 10;
+    	let b = 30;
+    	
+    	writeColor(`[ 대입 전 ] a : ${a}, b : ${b}`, "h3", "blue");
+
+    	[a, b] = [b, a];
+    	
+    	writeColor(`[ 대입 후 ] a : ${a}, b : ${b}`, "h3", "red");
+    	
+    	hr();    	
+    	function f1() {
+    		  return [1, 2];
+    	}
+
+    	let x, y;
+    	[x, y] = f1();/* 반복문 돌릴 필요없이 배열 형식으로 작성해서 주면 대입됨 */
+    	
+    	write(x, "h4");
+    	write(y, "h4");
+    	
+    	hr();    	
+    	function f2() {
+    		  return [1, 2, 3, 4, 5, 6];
+    	}
+
+    	let z;/* rest element에 해당하는 변수? */
+    	[x, y, ...z] = f2();  // rest element
+    	
+    	write(x, "h4");
+    	write(z, "h3");
+    	write(y, "h4");
+    	
+    </script>
+</body>
+</html>

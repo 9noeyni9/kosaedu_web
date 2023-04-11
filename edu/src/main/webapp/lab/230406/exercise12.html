@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>구구단</h1>
+	<hr>
+	<script>
+		const href = document.getElementsByTagName("h1")[0];
+		href.addEventListener("click", moveURI);
+
+		function moveURI() {
+			location.href = "https://ko.wikipedia.org/wiki/구구단";
+		}
+		let i;
+		for (i = 1; i <= 9; i++) {
+			document.writeln("<button onclick= 'gugudan(" + i +")'>" + i + "단</button>");
+		}
+
+		
+		let view = document.getElementsByTagName("output")[0];	
+	
+	
+		
+	
+		function gugudan(i) {
+			for (let j = 1; j <= 9; j++) {
+				view.innerHTML += i*  j;
+			}
+/* 		 let doms = document.getElementsByTagName("button"); 
+		
+		 for (i=0;i<doms.length;i++) {
+			doms[i].addEventListener("click", gugudan);
+		}  */
+		}
+
+	</script>
+	
+</body>
+</html>

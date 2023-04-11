@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <h2>ES6에서 추가된 구문&amp;API(6)</h2>
+    <hr>
+    <script>    
+    window.addEventListener("load", function() {
+       	fetch('/edu/jsexam/230410/ajaxexam/content/sample.json')/* fetch함수 이용해서 ajax 요청 가능 */
+        .then(res => res.json())/* response객체 */
+        .then( data => {
+        	for (let k in data)
+        		document.body.innerHTML += `<h3>${data[k]}</h3`;
+        });   /* 하고 싶은 일 있으면 .then을 붙여가면서 수행하는 것 */
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <h2>ES6에서 추가된 구문&amp;API(1)</h2>
+    <hr>
+    <script src="../util.js"></script>
+    <script>
+        var jsname = "자바스크립트";
+        // 기존 코드
+        console.log("이건 " + jsname + "입니다.");
+
+        // 템플릿 리터럴 방식(` 기호는 백틱 기호)
+        console.log(`이건 ${jsname}입니다.`);
+
+        writeColor("이건 " + jsname + "입니다.", "h3", "red");
+        writeColor(`이건 ${jsname}입니다.`, "h3", "green");
+
+        hr();
+        const introduce = { name: 'unico', age: 23 };
+        const { name, age } = introduce;
+        writeColor(name, "h3", "pink"); // unico
+        writeColor(age, "h3", "lime"); // 23
+        
+        hr()
+        const { name: myName, age: myAge } = introduce;/* name값은 myName이란 변수에 담고 age값은 myAge 변수에 담아라 */
+
+        writeColor(myName, "h3", "orange"); // unico
+        writeColor(myAge, "h3", "blue"); // 23
+        
+        const fruits = ['apple', 'mango', 'grape'];    
+        const [zero, one, two] = fruits;/* let : 변수 const : 상수 */
+
+        writeColor(zero, "h3", "magenta");   
+        hr();
+        
+        const [v1, v2, ...rest] = [10, 20, 30, 40, 50];
+        writeColor(v1, "h3", "green"); 
+        writeColor(typeof v1, "h4", "green"); 
+        writeColor(v2, "h3", "green"); 
+        writeColor(typeof v2, "h4", "green"); 
+        writeColor(rest, "h3", "green"); 
+        writeColor(typeof rest, "h4", "green"); 
+        writeColor(Array.isArray(rest), "h4", "green");       
+        
+        hr();
+        const {score, subject} = { subject:'자바스크립트', score:100};        
+        writeColor(score, "h3", "blue"); 
+        writeColor(subject, "h3", "blue"); 
+        
+        hr();        
+        let foo = ["one", "two", "three"];
+        let [red, yellow, green] = foo;        
+        writeColor(`red=${red}, yellow=${yellow}, green=${green}`, "h3", "deeppink");                
+    </script>
+</body>
+</html>

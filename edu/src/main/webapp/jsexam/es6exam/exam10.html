@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+	  	window.addEventListener("load", function() {
+	     	document.getElementById("loginb").onclick = handleButtonPress;
+	  	});
+
+	  	function handleButtonPress(e){
+	     	e.preventDefault();
+	     	const form = document.querySelector("#loginf");
+	     	const id = document.querySelector("#id");
+	 	 	const url_form_data = new URLSearchParams(new FormData(form))/* form 태그에 관련된 객체들을 돔객체에 담아서..? */
+	 	 	console.log(url_form_data);
+	     	fetch(form.action, {
+	    	  		method: "POST",
+	    	  		headers: {
+	  						'Content-Type': 'application/x-www-form-urlencoded'	  			
+	  				},
+	    	  		body: url_form_data
+	    		}
+	     	)
+	    	.then((response) => response.json())
+	    	.then((jsonObj) => {
+	    		const output = document.querySelector("output");
+	   		 	if (jsonObj.result == "ok") {
+	   			 	output.textContent="로그인 성공!!";
+	   			 	output.style.color = "blue";
+	   		 	} else if (jsonObj.result == "fail") {
+	   		  	 	output.textContent="로그인 실패!!";
+	   		  	 	output.style.color = "red";
+	   			 	form.reset();
+	   				id.focus();
+	            }
+	    	});	  	
+	  	}					
+      </script>
+	</head>
+<body>
+	<h2>ES6에서 추가된 구문&amp;API(10)</h2>
+    <hr>
+	<h3>계정과 패스워드를 입력해 주세요.</h3>
+	<form id="loginf" action="/edu/jsexam/230410/ajaxexam/content/login.jsp">
+		<table>
+			<tr>
+				<td><label for="id">계정</label></td>
+				<td><input type="text" id="id" name="id" required /></td>
+			</tr>
+			<tr>
+				<td><label for="passwd">패스워드</label></td>
+				<td><input type="password" id="passwd" name="passwd" required /></td>
+			</tr>
+			<tr>
+				<td><input type="submit" id="loginb" value="로그인" /></td>
+				<td><output></output></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
