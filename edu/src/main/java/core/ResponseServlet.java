@@ -17,10 +17,11 @@ public class ResponseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String uri = request.getRequestURI();
+		String uri = request.getRequestURI();//URI만 추출 /서버주소 포트번호 뺀 이후
+		System.out.println(uri);
 		String filename = "";
 		String contentType = "";
-		if (uri.endsWith("getHTML")) {
+		if (uri.endsWith("getHTML")) {//endWith: 뭘로 끝나는지
 			filename = getServletContext().getRealPath("/")+"/clientexam/sample.html";	
 			contentType = "text/html; charset=utf-8";
 		} else if (uri.endsWith("getXML")) {
@@ -28,19 +29,19 @@ public class ResponseServlet extends HttpServlet {
 			contentType = "text/xml; charset=utf-8";
 		} else if (uri.endsWith("getJSON")) {
 			filename = getServletContext().getRealPath("/")+"/clientexam/sample.json";	
-			contentType = "text/json; charset=utf-8";
+			contentType = "text/json; charset=utf-8";//"application/json"					
 		} else {
 			filename = getServletContext().getRealPath("/")+"/images/trans_duke.png";	
 			contentType = "image/png";
 		}
 		File f = new File(filename);
-		FileInputStream fis = new FileInputStream(f);
+		FileInputStream fis = new FileInputStream(f);//FileInputStream 객체 생성
 		response.setContentType(contentType);
 		if(contentType.startsWith("image")) {
-			byte[] content = new byte[(int)f.length()];
-			ServletOutputStream sos = response.getOutputStream();
-			fis.read(content);
-			sos.write(content);			
+			byte[] content = new byte[(int)f.length()];//파일 사이즈 배열 만듬(바이너리 형식-바이트 형식 사용)
+			ServletOutputStream sos = response.getOutputStream();//response.getOutputStream 사용
+			fis.read(content);//이미지 파일 사이즈만큼 읽어서 
+			sos.write(content);//작성			
 			sos.close();
 		} else {
 			InputStreamReader isr = new InputStreamReader(fis, "utf-8");

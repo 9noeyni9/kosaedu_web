@@ -14,13 +14,13 @@ public class SessionTestServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
-		String command = request.getParameter("comm");
-		HttpSession session = request.getSession();		
+		String command = request.getParameter("comm");//comm이라는 이름으로 전달되는 객체
+		HttpSession session = request.getSession();//생성X 준비O		
 		String msg="";
 		long time = session.getCreationTime();
 		String id = session.getId();
-	    if(command.equals("view")) {
-			if(session.isNew()) {
+	    if(command.equals("view")) {//command가 null이라서 비교 자체가 불가 
+			if(session.isNew()) {//isNew() : 처음 만들어진건지 판단
 				msg = "세션 객체 생성 : "; 
 			} else {
 				msg = "세션 객체 추출 : "; 
@@ -38,6 +38,3 @@ public class SessionTestServlet extends HttpServlet {
 		out.close();
 	}
 }
-
-
-

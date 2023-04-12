@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div{
+background-color: #FAF4C0; 
+width: 50%;
+color :gray;
+}
+h2{
+background-color : #DAD9FF;
+color : #5C5B81;
+width: 50%;
+text-shadow:2px 2px 2px #FFD8D8;
+}
+label:hover{
+background-color : #DAD9FF;
+}
+</style>
+</head>
+<body>
+<h2>펜션 예약 서비스</h2>
+<hr>
+<form method="post" action="/edu/reservation">
+<div>
+<table>
+<tr>
+  <td>예약자명 </td><td><input type="text" id="name" name="name" placeholder="이름을 입력하세요"></td>
+</tr>
+<tr>
+  <td>예약암호 </td><td><input type="password" id="passwd" name="passwd"></td>
+</tr>
+<tr>
+  <td>룸선택 </td><td><label><input type="radio" id="room" name="room" value="오션뷰">오션뷰</label>
+  <label><input type="radio" id="room" name="room" value="하프오션뷰">하프오션뷰</label>
+  <label><input type="radio" id="room" name="room" value="마운틴뷰">마운틴뷰</label>
+  <label><input type="radio" id="room" name="room" value="씨티뷰">씨티뷰</label></td>
+</tr>
+<tr>
+  <td>추가요청사항 </td><td><label><input type="checkbox" id="requirements" name="requirements" value="바베큐">바베큐</label>
+  <label><input type="checkbox" id="requirements" name="requirements" value="수영장">수영장</label>
+  <label><input type="checkbox" id="requirements" name="requirements" value="낚시">낚시</label>
+  <label><input type="checkbox" id="requirements" name="requirements" value="조식">조식</label></td>
+</tr>
+<tr>
+  <td>예약날짜 </td><td><input type="date" id="date" name="date" value="연도-월-일"></td>
+<tr>
+</table>
+<hr>
+  <input type="submit" value="보내기"> <input type="reset" value="다시 입력하기">
+</div>
+</form>
+</body>
+</html>

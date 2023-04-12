@@ -11,10 +11,11 @@
 </head>
 <body>
 <h2>FileUpload 실습 </h2>
-<form  method="post"  action="/edu/upload" enctype="multipart/form-data" >
+<form  method="post"  action="/edu/upload" enctype="multipart/form-data" ><!-- enctype : 디폴트 값이 있기 때문에 파일이나 이미지 전송하려면 mutipart/form-data 사용해야함
+ --><!-- get방식 불가 post방식만 가능 -->
   작성자<input type="text" name="theAuthor"><br>
   나이<input type="number" name="theAge"><br>
-  파일<input type="file" name="theFile" multiple><br>
+  파일<input type="file" name="theFile" multiple><br><!--  -->
   <input type="submit" value="업로드">
 </form>
 </body>
