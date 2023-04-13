@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	text-align: center;
+}
+
+img {
+	width: 100px;
+	height: 100px;
+}
+</style>
+</head>
+<body>
+	<h2>원하는 상품을 클릭해주세요!! 마구마구~~~~</h2>
+	<hr>
+	<div></div>
+	<output></output>
+	<script>
+		var pid;
+		var dom = document.getElementsByTagName("div")[0];
+		window.onload = function() {
+			for (var i = 1; i <= 10; i++) {				
+				src = "../../images/" + i  + ".jpg"
+				if (i <= 9)
+					pid = "p00" + i ;
+				else
+					pid = "p0" + i ;
+			    dom.innerHTML +="<img src= '"+ src+"' id= '" + pid +"'>";
+			}
+		}
+		var cnt = 0;
+		const xhr = new XMLHttpRequest();
+		function click_img(e) {
+			if(e.target.tagName=="IMG"){
+				xhr.onload = function(){
+					if(xhr.status==200){
+						const str = xhr.responseText;
+						const obj = JSON.parse(str);
+						console.log(obj);
+						const target = document.getElementsByTagName('output')[0];
+						var id = e.target.id
+						target.innerHTML= obj[id] ;
+					}
+				};
+				xhr.open("GET", "/edu/basket?id="+ e.target.id ,true);
+				/* "/edu/basket?id=" + e.target.id */
+				xhr.send();
+			}			
+		}
+		dom.addEventListener("click",click_img);
+		 
+
+		
+</script>
+</body>
+</html>
