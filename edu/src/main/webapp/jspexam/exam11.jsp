@@ -12,7 +12,7 @@
 </style>
 </head>
 <body>
-	<% if (request.getMethod().equals("GET")) { %>
+	<% if (request.getMethod().equals("GET")) { %><!-- 요청방식 리턴 대문자 사용 -->
 		<h2>원하는 컬러와 날짜를 선택하세요</h2>
 		<form method="post" action="/edu/jspexam/exam11.jsp">
 			칼라 : <input type="color"  name="fcolor" ><br>

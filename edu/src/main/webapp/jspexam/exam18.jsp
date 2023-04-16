@@ -15,7 +15,7 @@ name 변수의 값(표현식 태그) : <%= name %><br>
 name 변수의 값(EL) : ${name}<br>
 <% pageContext.setAttribute("name", "자바");  %>
 name 변수의 값 : ${name}<br>
-pageScope.name 변수의 값 : ${pageScope.name}<br>
+pageScope.name 변수의 값 : ${pageScope.name}<br><!-- pagescope에 저장되있는 name -->
 <hr>
 <% pageContext.setAttribute("number", 100); %>
 number 변수의 값 : ${number}<br>

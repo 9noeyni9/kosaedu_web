@@ -13,11 +13,11 @@ getMethod() : <%=  request.getMethod()  %><br>
 getRequestURI() : <%=  request.getRequestURI()  %><br>
 getHeader("user-agent") : <%=  request.getHeader("user-agent")  %><br>
 [ application ]<br>
-getContextPath() : <%=  application.getContextPath()  %><br>
-getServletContextName() : <%=  application.getServletContextName()  %><br>
+getContextPath() : <%=  application.getContextPath()  %><br> <!-- /edu -->
+getServletContextName() : <%=  application.getServletContextName()  %><br><!-- edu -->
 getServerInfo() : <%=  application.getServerInfo()  %><br>
 getMajorVersion() : <%=  application.getMajorVersion()  %><br>
-getSessionTimeout() : <%=  application.getSessionTimeout()  %><br>
+getSessionTimeout() : <%=  application.getSessionTimeout()  %><br><!-- 일정 시간 지난 후 세션 객체 자동 삭제(기본 30초) -->
 [ session ]<br>
 getId() : <%=  session.getId()  %><br>
 getCreationTime() : <%=  new Date(session.getCreationTime())  %><br>
